@@ -36,7 +36,7 @@
       "outbounds": [
         "direct"
       ],
-      "url": "https://myvv-7vr9yd5y.b4a.run//chat",
+      "url": "https://vvn2-vzmvn4hf.b4a.run/chat",
       "interval": "5m",
       "tolerance": 50,
       "idle_timeout": "30m"
