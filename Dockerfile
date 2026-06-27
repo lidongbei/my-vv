@@ -18,8 +18,11 @@ RUN apk add --no-cache wget tar && \
 
 COPY config.json .
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 USER appuser
 
 EXPOSE 8080
 
-CMD ["./sing-box", "run", "-c", "config.json"]
+ENTRYPOINT ["/entrypoint.sh"]
