@@ -1,0 +1,10 @@
+# Generated outputs
+clash.yaml
+c.yaml
+
+# Local input list
+nodes.txt
+
+# Python cache
+__pycache__/
+*.pyc
