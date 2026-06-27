@@ -1,6 +1,6 @@
 FROM alpine:3.20
 
-RUN apk add --no-cache wget tar curl && \
+RUN apk add --no-cache python3 ca-certificates && \
     addgroup -g 1000 -S appgroup && \
     adduser -u 1000 -S appuser -G appgroup
 
@@ -17,10 +17,10 @@ RUN apk add --no-cache wget tar && \
     apk del wget tar
 
 COPY config.json .
-COPY curl-check.sh curl-check-test.sh ./
+COPY websocket-check.py websocket-check.sh websocket-check-test.sh ./
 
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh ./curl-check.sh ./curl-check-test.sh
+RUN chmod +x /entrypoint.sh ./websocket-check.py ./websocket-check.sh ./websocket-check-test.sh
 
 USER appuser
 
